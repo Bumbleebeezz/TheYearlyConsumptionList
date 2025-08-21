@@ -118,10 +118,11 @@ body{
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+
+@media only screen and (max-width: 600px) {
   .login-popup .box {
     flex-direction: column;
-    height: 70vw;
+    height: 80vw;
   }
   .login-popup .box .img-area{
   border-radius: 0 ;
