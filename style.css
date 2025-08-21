@@ -19,16 +19,16 @@ body{
   background-color: #457b9d;
 
 }
+
 .login-popup .box{
   background-color: white;
-  width: 70vw;
+  width: 50vw;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
-  border-radius: 5px;
 
 }
 
@@ -36,7 +36,6 @@ body{
   flex : 0 0 50%;
   max-width: 50;
   position: relative;
-  border-radius: 5px 0 0 5px;
   overflow: hidden;
   padding: 3vw;;
   display: flex;
@@ -48,7 +47,7 @@ body{
   background-color:  rgb(255, 196, 0);
   padding: 1vw;
   border-radius: 5px;
-  font-size: 1.8vw;
+  font-size: 1vw;
 }
 .login-popup .box .img-area .img{
   position: absolute;
@@ -78,7 +77,6 @@ body{
   flex : 0 0 50%;
   max-width: 50%;
   padding: 3vw;
-  border-radius: 0 5px 5px 0;
 
 }
 .login-popup .box .form h1{
@@ -118,6 +116,22 @@ body{
   text-transform: uppercase;
   font-family: jura, sans-serif;
   font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  .login-popup .box {
+    flex-direction: column;
+    height: 70vw;
+  }
+  .login-popup .box .img-area{
+  border-radius: 0 ;
+  }
+  .login-popup .box .img-area h1{
+    font-size: 2vw;
+  }
+  .login-popup .box .form h1{
+    font-size: 4vw;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
