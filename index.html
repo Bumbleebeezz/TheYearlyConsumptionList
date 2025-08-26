@@ -1,60 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Login</title>
-      <link rel="stylesheet" href="style.css">
-    <body>
-      <div class="login-popup">
-        <div class="box">
-          <div class="img-area">
-            <div class="img"></div>
-            <h1>The yearly consumption list</h1>
-          </div>
-          <div class="form">
-            <form>
-              <h1>Log In</h1>
-              <div class="form-group">
-                <input id="username"  type="text" placeholder="Username" required class="form-control">
-              </div>
-              <div class="form-group">
-                <input id="password" type="password" placeholder="Password" required class="form-control">
-              </div>
-              <button id="loginBtn" type="submit" class="btn" onclick="checkCredentials()">Login
-            </form>
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="login-popup">
+    <div class="box">
+      <div class="img-area">
+        <div class="img"></div>
+        <h1>The yearly consumption list</h1>
       </div>
+      <div class="form">
+        <form onsubmit="checkCredentials(event)">
+          <h1>Log In</h1>
+          <div class="form-group">
+            <input id="username" type="text" placeholder="Username" required class="form-control" />
+          </div>
+          <div class="form-group">
+            <input id="password" type="password" placeholder="Password" required class="form-control" />
+          </div>
+          <button id="loginBtn" type="submit" class="btn">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-      <script src="script.js" defer></script>
-    </body>
-  </head>
+  <script>
+    function checkCredentials(event) {
+      event.preventDefault(); // Prevent form from reloading the page
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const loginBtn = document.getElementById("loginBtn");
+
+
+      if (username === 'BnB' && password === '90952024') {
+        window.location.href = 'home.html';
+        return;
+      }
+
+      // Invalid login
+      loginBtn.textContent = "❌ Invalid username or password.";
+      loginBtn.style.backgroundColor = "red";
+      loginBtn.style.color = "white";
+      loginBtn.style.fontSize = "3vw";
+      loginBtn.style.textAlign = "center";
+      loginBtn.style.marginBottom = "5vw";
+
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 3000);
+    }
+  </script>
+</body>
 </html>
-
-<script>
-  
-
-  function checkCredentials() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const loginBtn = document.getElementById("loginBtn");
-
-  if (username !== "BnB" || password !== "90952024") {
-    loginBtn.textContent = "❌ Invalid username or password.";
-    loginBtn.style.backgroundColor = "red";
-    loginBtn.style.color = "white";
-    loginBtn.style.fontSize = "3vw";
-    loginBtn.style.textAlign = "center";
-    loginBtn.style.marginBottom = "5vw"; 
-
-    // Delay redirect to index.html so user can read the message
-    setTimeout(() => {
-      window.location.href = 'index.html';
-    }, 3000); // 3 seconds delay
-  } else {
-    window.location.href = 'home.html';
-  }
-}
-</script>
