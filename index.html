@@ -14,21 +14,15 @@
             <h1>The yearly consumption list</h1>
           </div>
           <div class="form">
-            
             <form>
               <h1>Log In</h1>
               <div class="form-group">
-                <input type="text" placeholder="Username" required class="form-control">
+                <input id="username"  type="text" placeholder="Username" required class="form-control">
               </div>
               <div class="form-group">
-                <input type="password" placeholder="Password" required class="form-control">
+                <input id="password" type="password" placeholder="Password" required class="form-control">
               </div>
-              <!-- <div class="form-group">
-                <label>
-                  <input type="checkbox">
-                  Remember me
-              </div> -->
-              <button type="submit" class="btn">Login
+              <button id="loginBtn" type="submit" class="btn" onclick="checkCredentials()">Login
             </form>
           </div>
         </div>
@@ -38,3 +32,29 @@
     </body>
   </head>
 </html>
+
+<script>
+  
+
+  function checkCredentials() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const loginBtn = document.getElementById("loginBtn");
+
+  if (username !== "BnB" || password !== "90952024") {
+    loginBtn.textContent = "❌ Invalid username or password.";
+    loginBtn.style.backgroundColor = "red";
+    loginBtn.style.color = "white";
+    loginBtn.style.fontSize = "3vw";
+    loginBtn.style.textAlign = "center";
+    loginBtn.style.marginBottom = "5vw"; 
+
+    // Delay redirect to index.html so user can read the message
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 3000); // 3 seconds delay
+  } else {
+    window.location.href = 'home.html';
+  }
+}
+</script>

@@ -88,6 +88,7 @@ body{
   height: 5vw;
   width: 100%;
   margin-bottom : 7vw;
+  padding: 4vw;
   border: none;
   font-size: 5vw;
   font-family: jura, sans-serif;
@@ -102,11 +103,11 @@ body{
 }
 
 .login-popup .box .form .btn{
-  width: 100%;
-  padding: 1vw;
+  width: 90%;
+  padding: 2vw;
   background-color: #457b9d;
   font-size: 3vw;
-  margin-top: 1.5vw;
+  margin: 4vw;
   border: none;
   color: rgb(255, 196, 0);
   border-radius: 5px;
