@@ -9,6 +9,11 @@ body{
   line-height: 1.5;
 }
 
+.homeBody{
+  background-color: #457b9d;
+  padding: 5vw;
+}
+
 .login-popup{
   position: fixed;
   top: 0;
