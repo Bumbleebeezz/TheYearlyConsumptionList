@@ -6,30 +6,49 @@
   <title>Home</title>
   <link rel="stylesheet" href="style.css">
   <style>
-  .collapsible {
-    background-color: #ffaa00;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  .category{
-    margin: 5%;
-  }
-  .active, .collapsible:hover {
-    background-color: #1b79d0;
-  }
-
-  .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-  }
+    .addBtn{
+      background-color: #ffaa00;
+      color: white;
+      width: 100%;
+      margin: 1vw;
+      padding: 0.5vw;
+      border-radius: 8px;
+      border: none;
+      font-size: 4vw;
+    }
+    
+    .collapsible {
+      background-color: #ffaa00;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      border-radius: 10px;
+    }
+    .active, .collapsible:hover {
+      background-color: #1b79d0;
+    }
+    .category{
+      margin: 5%;
+    }
+    
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+    ul{
+      list-style-type: none;
+    }
+    li{
+      
+      font-size: 4vw;
+    }
   </style>
 </head>
 
@@ -40,13 +59,17 @@
   <div class="content">
     <button class="btn addBtn">+ Add item</button>
     <ul>
+      
       <li>
+        <input type="checkbox">
         fsefsefse
       </li>
       <li>
+        <input type="checkbox">
         fsefsefse
       </li>
       <li>
+        <input type="checkbox">
         fsefsefse
       </li>
     </ul>  
