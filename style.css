@@ -22,7 +22,8 @@ body{
 
 .login-popup .box{
   background-color: white;
-  width: 50vw;
+  width: 90%;
+  height: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,9 +35,8 @@ body{
 
 .login-popup .box .img-area{
   flex : 0 0 50%;
-  max-width: 50;
+  max-width: 100%;
   position: relative;
-  overflow: hidden;
   padding: 3vw;;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@ body{
   background-color:  rgb(255, 196, 0);
   padding: 1vw;
   border-radius: 5px;
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 .login-popup .box .img-area .img{
   position: absolute;
@@ -58,7 +58,6 @@ body{
   background-image: url('ullaredcart.png');
   background-size: cover;
   background-position: center;
-  animation: zoomInOut 7s linear infinite;
   z-index: -1;
 }
 @keyframes zoomInOut {
@@ -77,23 +76,21 @@ body{
   flex : 0 0 50%;
   max-width: 50%;
   padding: 3vw;
-
 }
 .login-popup .box .form h1{
-  font-size: 3vw;
-  margin: 0 0 3vw;
+  font-size: 4vw;
+  margin: 0 0 5vw;
   color: #457b9d;
-
+  text-align: center;
 }
 
 .login-popup .box .form .form-control{
-  height: 2vw;
+  height: 5vw;
   width: 100%;
-  margin-bottom : 2vw;
+  margin-bottom : 7vw;
   border: none;
-  font-size: 1.5vw;
+  font-size: 5vw;
   font-family: jura, sans-serif;
-
 }
 .login-popup .box .form .form-control:focus{
   outline: none;
@@ -106,9 +103,9 @@ body{
 
 .login-popup .box .form .btn{
   width: 100%;
-  height: 2.5vw;
+  padding: 1vw;
   background-color: #457b9d;
-  font-size: 1.5vw;
+  font-size: 3vw;
   margin-top: 1.5vw;
   border: none;
   color: rgb(255, 196, 0);
@@ -122,16 +119,22 @@ body{
 @media only screen and (max-width: 600px) {
   .login-popup .box {
     flex-direction: column;
-    height: 100vw;
+    height: 90%;
   }
   .login-popup .box .img-area{
-  border-radius: 0 ;
+    border-radius: 0;
   }
   .login-popup .box .img-area h1{
-    font-size: 2vw;
+    font-size: 5vw;
+  }
+  .login-popup .box .form{
+    max-width: 100%;
   }
   .login-popup .box .form h1{
-    font-size: 4vw;
+    font-size: 10vw;
+  }
+  .login-popup .box .form .btn{
+    font-size: 5vw;
   }
 }
 
