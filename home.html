@@ -6,323 +6,156 @@
   <title>Home</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .addBtn{
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+ * {
+      font-family: 'Jura', sans-serif;
+      
+    }
+    .btn{
       background-color: #ffaa00;
-      color: white;
+      color: #3d5d99;
       width: 100%;
       margin: 1vw;
-      padding: 0.5vw;
+      padding: 1vw;
       border-radius: 8px;
       border: none;
       font-size: 4vw;
+      font-weight: bold;
     }
     
     .collapsible {
-      background-color: #ffaa00;
-      color: white;
+      background-color: #3d5d99;
+      color: #f9f9f9;
       cursor: pointer;
-      padding: 4vw;
+      padding: 2vw;
       width: 100%;
       border: none;
       text-align: left;
       outline: none;
       font-size: 5vw;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: bold;
     }
+
     .active, .collapsible:hover {
-      background-color: #1b79d0;
+      background-color: #ffaa00;
+      color: #3d5d99;
     }
-    .category{
-      margin: 5%;
-    }
-    
+
     .content {
-      padding: 0 18px;
+      padding: 2vw;
       display: none;
       overflow: hidden;
-      background-color: #f1f1f1;
+      background-color: #f9f9f9;
     }
-    ul{
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
       list-style-type: none;
     }
     li{
       font-size: 5vw;
+      list-style-type: none;
+      margin: 5%;
+
     }
+    
   </style>
 </head>
 
-<body class="homeBody" style="background-color: #f1f1f1;">
+<body class="homeBody" style="background-color: #f9f9f9">
 
-  <div class="category">
-    <button type="button" class="collapsible">Baby</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul id="itemList"></ul> 
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Barnkläder</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul id="itemList"></ul> 
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Belysning</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Damkläder</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Friluftsliv</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Grill</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Gröna rummet</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Hemelektronik</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Hemtextil</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Herrkläder</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Husdjur</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Hälsokost</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Hästsport</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Kosmetik</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Kroppsvård</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Leksaker</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Livsmedel</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Media</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Pyssel & Kontor</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Rengöring</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Skor</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Sport</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Till hemmet</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Utemöbler</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Verktyg & Bilvård</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  <div class="category">
-    <button type="button" class="collapsible">Väskor</button>
-  <div class="content">
-    <button class="btn addBtn">+ Add item</button>
-    <ul>
-    </ul>  
-  </div>
-  </div>
-  
+  <ul id="departmentList" ></ul>
+
 <script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
   
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
+const departments = [
+    "Baby", "Barnkläder", "Belysning", "Damkläder", "Friluftsliv", "Grill",
+    "Gröna rummet", "Hemelektronik", "Hemtextil", "Herrkläder", "Husdjur",
+    "Hälsokost", "Hästsport", "Kosmetik", "Kroppsvård", "Leksaker", "Livsmedel",
+    "Media", "Pyssel & Kontor", "Rengöring", "Skor", "Sport", "Till hemmet",
+    "Utemöbler", "Verktyg & Bilvård", "Väskor"
+  ];
+
+  const departmentList = document.getElementById("departmentList");
+
+  // Helper: Add item with remove button
+  function createListItem(text, key) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    li.style.display = "flex";
+    li.style.justifyContent = "space-between";
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "X";
+    removeBtn.style.color = "red";
+    removeBtn.style.fontSize = "3vw";
+    removeBtn.style.cursor = "pointer";
+    removeBtn.style.fontWeight = "bold";
+    removeBtn.style.border = "none";
+    removeBtn.style.background = "none";
+    removeBtn.addEventListener("click", () => {
+      li.remove();
+
+      let currentItems = JSON.parse(localStorage.getItem(key)) || [];
+      currentItems = currentItems.filter(item => item !== text);
+      localStorage.setItem(key, JSON.stringify(currentItems));
+    });
+
+    li.appendChild(removeBtn);
+    return li;
+  }
+
+  // Build each department section
+  departments.forEach((department, index) => {
+    const safeKey = department.replace(/\s|&/g, "_");
+    const li = document.createElement("li");
+
+    li.innerHTML = `
+      <button type="button" class="collapsible">${department}</button>
+      <div class="content">
+        <button class="btn addBtn" data-key="itemList_${safeKey}">+ Lägg till</button>
+        <ul id="itemList_${safeKey}"></ul>
+      </div>
+    `;
+
+    departmentList.appendChild(li);
+
+    // Load saved items from localStorage
+    const savedItems = JSON.parse(localStorage.getItem(`itemList_${safeKey}`)) || [];
+    const ul = li.querySelector(`#itemList_${safeKey}`);
+    savedItems.forEach(item => {
+      const listItem = createListItem(item, `itemList_${safeKey}`);
+      ul.appendChild(listItem);
+    });
   });
 
-  
-}
-const addButton = document.querySelector('.addBtn');
-    const itemList = document.getElementById('itemList');
-    let items = JSON.parse(localStorage.getItem('myItems')) || [];
-
-    // Load saved items on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      items.forEach(item => addItemToDOM(item));
+  // Toggle collapsible content
+  document.querySelectorAll(".collapsible").forEach(button => {
+    button.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
     });
+  });
 
-    // Add new item
-    addButton.addEventListener('click', () => {
-      const text = prompt('Enter item name:');
-      if (text && text.trim() !== '') {
-        const newItem = { id: Date.now(), text };
-        items.push(newItem);
-        saveItems();
-        addItemToDOM(newItem);
-      }
+  // Add new item and save to localStorage
+  document.querySelectorAll(".addBtn").forEach(button => {
+    button.addEventListener("click", function () {
+      const key = this.getAttribute("data-key");
+      const ul = document.getElementById(key);
+      const itemName = prompt("Skriv in namnet på artikeln:");
+      if (!itemName) return;
+
+      const listItem = createListItem(itemName, key);
+      ul.appendChild(listItem);
+
+      const currentItems = JSON.parse(localStorage.getItem(key)) || [];
+      currentItems.push(itemName);
+      localStorage.setItem(key, JSON.stringify(currentItems));
     });
-
-    // Add item to DOM with edit and delete buttons
-    function addItemToDOM(item) {
-      const li = document.createElement('li');
-      li.style.display = "flex";
-      li.style.justifyContent = "space-between";
-      li.style.flexWrap = "wrap";
-      li.setAttribute('data-id', item.id);
-      li.innerHTML = `
-        <span class="item-text">${item.text}</span>
-        <button class="action-btn deleteBtn" >🗑️</button>
-      `;
-      itemList.appendChild(li);
-
-      // Handle delete
-      li.querySelector('.deleteBtn').addEventListener('click', () => {
-        items = items.filter(i => i.id !== item.id);
-        saveItems();
-        li.remove();
-      });
-}
-
-    // Save items to localStorage
-    function saveItems() {
-      localStorage.setItem('myItems', JSON.stringify(items));
-    }
+  });
   
 </script>
 </body>
