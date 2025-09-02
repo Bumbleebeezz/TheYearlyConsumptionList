@@ -60,7 +60,24 @@
       list-style-type: none;
       margin-bottom: 3vw;
     }
-    
+    @keyframes pop {
+  0% {
+    transform: scale(1);
+    color: black;
+  }
+  50% {
+    transform: scale(1.3);
+    color: green;
+  }
+  100% {
+    transform: scale(1);
+    color: black;
+  }
+}
+
+.quantity-animate {
+  animation: pop 0.3s ease;
+}
   </style>
 </head>
 
@@ -81,7 +98,7 @@ const departmentsAZ = [
   const departmentList = document.getElementById("departmentListAZ");
 
   // Helper: Add item with remove button
-  function createListItem(text, key) {
+  function createListItem(text, key, initialQuantity = 1) {
   const li = document.createElement("li");
   li.textContent = text;
   li.style.display = "flex";
@@ -103,7 +120,7 @@ const departmentsAZ = [
   plusBtn.style.background = "none";
 
   const currentQuantity = document.createElement("span");
-  currentQuantity.textContent = "1";
+  currentQuantity.textContent = initialQuantity;
   currentQuantity.style.fontSize = "5vw";
 
   const minusBtn = document.createElement("button");
@@ -124,23 +141,57 @@ const departmentsAZ = [
   removeBtn.style.border = "none";
   removeBtn.style.background = "none";
 
-  plusBtn.addEventListener("click", () => {
-    currentQuantity.textContent = parseInt(currentQuantity.textContent) + 1;
-  });
+  function animateQuantity(el) {
+  el.classList.remove("quantity-animate"); // Reset animation
+  void el.offsetWidth; // Force reflow to restart animation
+  el.classList.add("quantity-animate");
+}
 
-  minusBtn.addEventListener("click", () => {
-    const qty = parseInt(currentQuantity.textContent);
-    if (qty > 1) {
-      currentQuantity.textContent = qty - 1;
+plusBtn.addEventListener("click", () => {
+  const qty = parseInt(currentQuantity.textContent) + 1;
+  currentQuantity.textContent = qty;
+
+  animateQuantity(currentQuantity); // ✅ Animate it
+
+  // Update localStorage
+  let currentItems = JSON.parse(localStorage.getItem(key)) || [];
+  currentItems = currentItems.map(item => {
+    if (item.text === text) {
+      return { ...item, quantity: qty };
     }
+    return item;
   });
 
-  removeBtn.addEventListener("click", () => {
+  localStorage.setItem(key, JSON.stringify(currentItems));
+});
+
+minusBtn.addEventListener("click", () => {
+  let qty = parseInt(currentQuantity.textContent);
+  if (qty > 1) {
+    qty--;
+    currentQuantity.textContent = qty;
+
+    animateQuantity(currentQuantity); // ✅ Animate it
+
+    // Update localStorage
+    let currentItems = JSON.parse(localStorage.getItem(key)) || [];
+    currentItems = currentItems.map(item => {
+      if (item.text === text) {
+        return { ...item, quantity: qty };
+      }
+      return item;
+    });
+
+    localStorage.setItem(key, JSON.stringify(currentItems));
+  }
+});
+
+removeBtn.addEventListener("click", () => {
   const confirmed = confirm(`Are you sure you want to remove "${text}"?`);
   if (confirmed) {
     li.remove();
     let currentItems = JSON.parse(localStorage.getItem(key)) || [];
-    currentItems = currentItems.filter(item => item !== text);
+    currentItems = currentItems.filter(item => item.text !== text);
     localStorage.setItem(key, JSON.stringify(currentItems));
   }
 });
@@ -188,21 +239,29 @@ const departmentsAZ = [
   });
 
   // Add new item and save to localStorage
-  document.querySelectorAll(".addBtn").forEach(button => {
-    button.addEventListener("click", function () {
-      const key = this.getAttribute("data-key");
-      const ul = document.getElementById(key);
-      const itemName = prompt("Skriv in namnet på artikeln:");
-      if (!itemName) return;
+document.querySelectorAll(".addBtn").forEach(button => {
+  button.addEventListener("click", function () {
+    const key = this.getAttribute("data-key");
+    const ul = document.getElementById(key);
+    const itemName = prompt("Skriv in namnet på artikeln:");
+    if (!itemName) return;
 
-      const listItem = createListItem(itemName, key);
-      ul.appendChild(listItem);
+    // Create item object with quantity
+    const item = {
+      text: itemName,
+      quantity: 1
+    };
 
-      const currentItems = JSON.parse(localStorage.getItem(key)) || [];
-      currentItems.push(itemName);
-      localStorage.setItem(key, JSON.stringify(currentItems));
-    });
+    // Create and append list item
+    const listItem = createListItem(item.text, key, item.quantity);
+    ul.appendChild(listItem);
+
+    // Save to localStorage
+    const currentItems = JSON.parse(localStorage.getItem(key)) || [];
+    currentItems.push(item); // store as object, not string
+    localStorage.setItem(key, JSON.stringify(currentItems));
   });
+});
   
 </script>
 </body>
