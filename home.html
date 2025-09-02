@@ -224,8 +224,8 @@ removeBtn.addEventListener("click", () => {
     const savedItems = JSON.parse(localStorage.getItem(`itemList_${safeKey}`)) || [];
     const ul = li.querySelector(`#itemList_${safeKey}`);
     savedItems.forEach(item => {
-      const listItem = createListItem(item, `itemList_${safeKey}`);
-      ul.appendChild(listItem);
+    const listItem = createListItem(item.text, `itemList_${safeKey}`, item.quantity);
+    ul.appendChild(listItem);
     });
   });
 
@@ -243,22 +243,28 @@ document.querySelectorAll(".addBtn").forEach(button => {
   button.addEventListener("click", function () {
     const key = this.getAttribute("data-key");
     const ul = document.getElementById(key);
-    const itemName = prompt("Skriv in namnet på artikeln:");
+    const itemName = prompt("Skriv in namnet på artikeln:")?.trim();
     if (!itemName) return;
 
-    // Create item object with quantity
+    const currentItems = JSON.parse(localStorage.getItem(key)) || [];
+
+    // ❌ Check for duplicates (case-insensitive)
+    const exists = currentItems.some(item => item.text.toLowerCase() === itemName.toLowerCase());
+    if (exists) {
+      alert(`Artikeln "${itemName}" finns redan i listan.`);
+      return;
+    }
+
+    // ✅ Add new item object
     const item = {
       text: itemName,
       quantity: 1
     };
 
-    // Create and append list item
     const listItem = createListItem(item.text, key, item.quantity);
     ul.appendChild(listItem);
 
-    // Save to localStorage
-    const currentItems = JSON.parse(localStorage.getItem(key)) || [];
-    currentItems.push(item); // store as object, not string
+    currentItems.push(item);
     localStorage.setItem(key, JSON.stringify(currentItems));
   });
 });
