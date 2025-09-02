@@ -51,14 +51,14 @@
 
     ul {
       list-style-type: disc;
-      padding-left: 20px;
+      padding: 1vw;
+      margin-bottom: 3vw;
       list-style-type: none;
     }
     li{
       font-size: 5vw;
       list-style-type: none;
-      margin: 5%;
-
+      margin-bottom: 3vw;
     }
     
   </style>
@@ -66,11 +66,11 @@
 
 <body class="homeBody" style="background-color: #f9f9f9">
 
-  <ul id="departmentList" ></ul>
+  <ul id="departmentListAZ" ></ul>
 
 <script>
   
-const departments = [
+const departmentsAZ = [
     "Baby", "Barnkläder", "Belysning", "Damkläder", "Friluftsliv", "Grill",
     "Gröna rummet", "Hemelektronik", "Hemtextil", "Herrkläder", "Husdjur",
     "Hälsokost", "Hästsport", "Kosmetik", "Kroppsvård", "Leksaker", "Livsmedel",
@@ -78,7 +78,7 @@ const departments = [
     "Utemöbler", "Verktyg & Bilvård", "Väskor"
   ];
 
-  const departmentList = document.getElementById("departmentList");
+  const departmentList = document.getElementById("departmentListAZ");
 
   // Helper: Add item with remove button
   function createListItem(text, key) {
@@ -136,11 +136,14 @@ const departments = [
   });
 
   removeBtn.addEventListener("click", () => {
+  const confirmed = confirm(`Are you sure you want to remove "${text}"?`);
+  if (confirmed) {
     li.remove();
     let currentItems = JSON.parse(localStorage.getItem(key)) || [];
     currentItems = currentItems.filter(item => item !== text);
     localStorage.setItem(key, JSON.stringify(currentItems));
-  });
+  }
+});
 
   controls.appendChild(plusBtn);
   controls.appendChild(currentQuantity);
@@ -152,7 +155,7 @@ const departments = [
 }
 
   // Build each department section
-  departments.forEach((department, index) => {
+  departmentsAZ.forEach((department, index) => {
     const safeKey = department.replace(/\s|&/g, "_");
     const li = document.createElement("li");
 
