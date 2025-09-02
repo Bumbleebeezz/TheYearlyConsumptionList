@@ -82,30 +82,74 @@ const departments = [
 
   // Helper: Add item with remove button
   function createListItem(text, key) {
-    const li = document.createElement("li");
-    li.textContent = text;
-    li.style.display = "flex";
-    li.style.justifyContent = "space-between";
+  const li = document.createElement("li");
+  li.textContent = text;
+  li.style.display = "flex";
+  li.style.justifyContent = "space-between";
+  li.style.alignItems = "center";
 
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "X";
-    removeBtn.style.color = "red";
-    removeBtn.style.fontSize = "3vw";
-    removeBtn.style.cursor = "pointer";
-    removeBtn.style.fontWeight = "bold";
-    removeBtn.style.border = "none";
-    removeBtn.style.background = "none";
-    removeBtn.addEventListener("click", () => {
-      li.remove();
+  const controls = document.createElement("div");
+  controls.style.display = "flex";
+  controls.style.alignItems = "center";
+  controls.style.gap = "3vw";
 
-      let currentItems = JSON.parse(localStorage.getItem(key)) || [];
-      currentItems = currentItems.filter(item => item !== text);
-      localStorage.setItem(key, JSON.stringify(currentItems));
-    });
+  const plusBtn = document.createElement("button");
+  plusBtn.textContent = "+";
+  plusBtn.style.color = "green";
+  plusBtn.style.fontSize = "5vw";
+  plusBtn.style.cursor = "pointer";
+  plusBtn.style.fontWeight = "bold";
+  plusBtn.style.border = "none";
+  plusBtn.style.background = "none";
 
-    li.appendChild(removeBtn);
-    return li;
-  }
+  const currentQuantity = document.createElement("span");
+  currentQuantity.textContent = "1";
+  currentQuantity.style.fontSize = "5vw";
+
+  const minusBtn = document.createElement("button");
+  minusBtn.textContent = "-";
+  minusBtn.style.color = "red";
+  minusBtn.style.fontSize = "5vw";
+  minusBtn.style.cursor = "pointer";
+  minusBtn.style.fontWeight = "bold";
+  minusBtn.style.border = "none";
+  minusBtn.style.background = "none";
+
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "X";
+  removeBtn.style.color = "red";
+  removeBtn.style.fontSize = "5vw";
+  removeBtn.style.cursor = "pointer";
+  removeBtn.style.fontWeight = "bold";
+  removeBtn.style.border = "none";
+  removeBtn.style.background = "none";
+
+  plusBtn.addEventListener("click", () => {
+    currentQuantity.textContent = parseInt(currentQuantity.textContent) + 1;
+  });
+
+  minusBtn.addEventListener("click", () => {
+    const qty = parseInt(currentQuantity.textContent);
+    if (qty > 1) {
+      currentQuantity.textContent = qty - 1;
+    }
+  });
+
+  removeBtn.addEventListener("click", () => {
+    li.remove();
+    let currentItems = JSON.parse(localStorage.getItem(key)) || [];
+    currentItems = currentItems.filter(item => item !== text);
+    localStorage.setItem(key, JSON.stringify(currentItems));
+  });
+
+  controls.appendChild(plusBtn);
+  controls.appendChild(currentQuantity);
+  controls.appendChild(minusBtn);
+  controls.appendChild(removeBtn);
+
+  li.appendChild(controls);
+  return li;
+}
 
   // Build each department section
   departments.forEach((department, index) => {
