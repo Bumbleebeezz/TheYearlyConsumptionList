@@ -16,8 +16,8 @@
       box-sizing: border-box;
     }
     .btn{
-      background-color: #fde508;
-      color: #0257b5;
+      background-color: #0097b2;
+      color: #ffbd59;
       width: 100%;
       margin: 1vw;
       padding: 1vw;
@@ -27,7 +27,7 @@
     }
     
     .collapsible {
-      background-color: #0257b5;
+      background-color: #737373;
       color: #f9f9f9;
       cursor: pointer;
       padding: 2vw;
@@ -40,15 +40,15 @@
     }
 
     .active, .collapsible:hover {
-      background-color: #fde508;
-      color: #0257b5;
+      background-color: #0097b2;
+      color: #ffbd59;
     }
 
     .content {
       padding: 2vw;
       display: none;
       overflow: hidden;
-      background-color: #f9f9f9;
+      background-color: white;
     }
 
     ul {
@@ -61,7 +61,7 @@
       font-size: 4vw;
       list-style-type: none;
       margin-bottom: 3vw;
-      color: #0257b5;
+      color: #737373;
     }
     @keyframes pop {
   0% {
@@ -84,49 +84,63 @@
 
 
 .navMenu {
-  background-color: #0257b5;
-  padding: 1vw;
-  padding-bottom: 3vw;;
+  padding: 2vw;
   text-align: center;
+  border-bottom: 2px solid #ffbd59;
+  border-top: 2px solid #ffbd59;
+  background-color: #0097b2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .navMenu a {
-  color: #f9f9f9;
+  color: white;
   text-decoration: none;
-  font-size: 3vw;
+  font-size: 3.5vw;
+  font-weight: bold;
   text-transform: uppercase;
-  font-weight: 500;
   display: inline-block;
-  width: 80px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
 .navMenu a:hover {
-  color: #fde508;
+  color: #ffbd59;
+  
+}
+
+.box {
+  background-color: white; 
+  border-radius: 8px; 
+  padding-bottom: 5vw; 
+  margin: 5vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
   </style>
 </head>
 
-<body class="homeBody" style="background-color: #f9f9f9">
-
- <nav class="navMenu">
-    <img src="GekasUllared.png" alt="GekasUllared" style="width: 60%;  display: block; margin: 0 auto; padding: 4vw;">
-    <a href="#">Home</a>
+<body class="homeBody" style="background-color: #0097b2;">
+<div class="box">
+  <img src="The yearly consumption list.png" alt="icon" style="width: 100%;  display: block; margin: 0 auto; padding-top: 5vw; padding-bottom: 5vw; ">
+    
+  <nav class="navMenu">
+    <a href="home.html">Home</a>
     <a href="#">Karta</a>
-    <a href="#">Work</a>
-    <a href="#">About</a>
+    <a href="index.html">Logga ut</a>
   </nav>
 
-  <h1 style="text-align: start; padding: 2vw; color: #457b9d; font-size: 4vw; margin-top: 10vw;">A-Ö</h1>
+  <h1 style="text-align: start; padding: 2vw; color: #737373; font-size: 4vw; margin-top: 10vw;">A-Ö</h1>
   
   <ul id="departmentListAZ" ></ul>
+</div>
+ 
 
 <script>
   
 const departmentsAZ = [
-    "Baby", "Barnkläder", "Belysning", "Damkläder", "Friluftsliv", "Grill",
     "Gröna rummet", "Hemelektronik", "Hemtextil", "Herrkläder", "Husdjur",
     "Hälsokost", "Hästsport", "Kosmetik", "Kroppsvård", "Leksaker", "Livsmedel",
     "Media", "Pyssel & Kontor", "Rengöring", "Skor", "Sport", "Till hemmet",
