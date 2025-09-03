@@ -9,22 +9,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
  * {
       font-family: 'Jura', sans-serif;
-      
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
     }
     .btn{
-      background-color: #ffaa00;
-      color: #3d5d99;
+      background-color: #fde508;
+      color: #0257b5;
       width: 100%;
       margin: 1vw;
       padding: 1vw;
       border-radius: 8px;
       border: none;
       font-size: 4vw;
-      font-weight: bold;
     }
     
     .collapsible {
-      background-color: #3d5d99;
+      background-color: #0257b5;
       color: #f9f9f9;
       cursor: pointer;
       padding: 2vw;
@@ -34,12 +37,11 @@
       outline: none;
       font-size: 5vw;
       border-radius: 8px;
-      font-weight: bold;
     }
 
     .active, .collapsible:hover {
-      background-color: #ffaa00;
-      color: #3d5d99;
+      background-color: #fde508;
+      color: #0257b5;
     }
 
     .content {
@@ -56,9 +58,10 @@
       list-style-type: none;
     }
     li{
-      font-size: 5vw;
+      font-size: 4vw;
       list-style-type: none;
       margin-bottom: 3vw;
+      color: #0257b5;
     }
     @keyframes pop {
   0% {
@@ -78,11 +81,46 @@
 .quantity-animate {
   animation: pop 0.3s ease;
 }
+
+
+.navMenu {
+  background-color: #0257b5;
+  padding: 1vw;
+  padding-bottom: 3vw;;
+  text-align: center;
+}
+
+.navMenu a {
+  color: #f9f9f9;
+  text-decoration: none;
+  font-size: 3vw;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #fde508;
+}
+
   </style>
 </head>
 
 <body class="homeBody" style="background-color: #f9f9f9">
 
+ <nav class="navMenu">
+    <img src="GekasUllared.png" alt="GekasUllared" style="width: 60%;  display: block; margin: 0 auto; padding: 4vw;">
+    <a href="#">Home</a>
+    <a href="#">Karta</a>
+    <a href="#">Work</a>
+    <a href="#">About</a>
+  </nav>
+
+  <h1 style="text-align: start; padding: 2vw; color: #457b9d; font-size: 4vw; margin-top: 10vw;">A-Ö</h1>
+  
   <ul id="departmentListAZ" ></ul>
 
 <script>
@@ -104,40 +142,38 @@ const departmentsAZ = [
   li.style.display = "flex";
   li.style.justifyContent = "space-between";
   li.style.alignItems = "center";
+  li.style.gap = "4vw";
 
   const controls = document.createElement("div");
   controls.style.display = "flex";
   controls.style.alignItems = "center";
-  controls.style.gap = "3vw";
+  controls.style.gap = "4vw";
 
   const plusBtn = document.createElement("button");
   plusBtn.textContent = "+";
   plusBtn.style.color = "green";
-  plusBtn.style.fontSize = "5vw";
+  plusBtn.style.fontSize = "4vw";
   plusBtn.style.cursor = "pointer";
-  plusBtn.style.fontWeight = "bold";
   plusBtn.style.border = "none";
   plusBtn.style.background = "none";
 
   const currentQuantity = document.createElement("span");
   currentQuantity.textContent = initialQuantity;
-  currentQuantity.style.fontSize = "5vw";
+  currentQuantity.style.fontSize = "4vw";
 
   const minusBtn = document.createElement("button");
   minusBtn.textContent = "-";
   minusBtn.style.color = "red";
-  minusBtn.style.fontSize = "5vw";
+  minusBtn.style.fontSize = "4vw";
   minusBtn.style.cursor = "pointer";
-  minusBtn.style.fontWeight = "bold";
   minusBtn.style.border = "none";
   minusBtn.style.background = "none";
 
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "X";
   removeBtn.style.color = "red";
-  removeBtn.style.fontSize = "5vw";
+  removeBtn.style.fontSize = "4vw";
   removeBtn.style.cursor = "pointer";
-  removeBtn.style.fontWeight = "bold";
   removeBtn.style.border = "none";
   removeBtn.style.background = "none";
 
