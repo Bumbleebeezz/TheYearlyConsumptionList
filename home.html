@@ -15,128 +15,155 @@
       font-weight: bold;
       margin: 0;
       padding: 0;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }
-    .btn{
-      background-color: transparent;
-      color: #ffbd59;
-      margin-bottom: 3vw;
-      border-radius: 8px;
-      border: none;
-      font-size: 4vw;
+
+    body {
+      background-color: #0097b2;
     }
+
+    .box {
+      background-color: white;
+      border-radius: 12px;
+      margin: 4vw auto;
+      max-width: 1000px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
     
+    .box img {
+      width: 50%;
+      display: block;
+      margin: 3vw auto 0;
+      padding: 2vw;
+    }
+
+    /* Navigation */
+    .navMenu {
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+      border-bottom: 2px solid #ffbd59;
+      border-top: 2px solid #ffbd59;
+      background-color: #0097b2;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6rem;
+    }
+
+    .navMenu a {
+      color: white;
+      text-decoration: none;
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      text-transform: uppercase;
+      transition: 0.2s;
+    }
+
+    .navMenu a:hover {
+      color: #ffbd59;
+    }
+
+    h1 {
+      text-align: start;
+      padding: 2vw;
+      color: #737373;
+      font-size: clamp(1.2rem, 3.5vw, 2rem);
+      margin-top: 5vw;
+    }
+
+    /* Collapsible sections */
     .collapsible {
       background-color: transparent;
       color: #737373;
       cursor: pointer;
-      padding: 2vw;
+      padding: 1rem;
       width: 100%;
       border: none;
       text-align: left;
-      outline: none;
-      font-size: 5vw;
-      border-radius: 5px;
-      
+      font-size: clamp(1rem, 4vw, 1.5rem);
       border-bottom: 2px solid #0097b2;
-
+      transition: 0.3s;
     }
 
-    .active, .collapsible:hover {
+    .collapsible:hover,
+    .active {
       border-bottom: 2px solid #ffbd59;
-      
     }
 
     .content {
-      padding: 2vw;
+      padding: 1rem;
       display: none;
       overflow: hidden;
       background-color: white;
     }
 
+    /* Buttons */
+    .btn {
+      background-color: transparent;
+      color: #ffbd59;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+      cursor: pointer;
+    }
+
+    /* List items */
     ul {
-      list-style-type: disc;
-      padding: 1vw;
-      margin-bottom: 3vw;
-      list-style-type: none;
+      list-style: none;
+      padding: 0.5rem;
     }
-    li{
+
+    li {
       font-size: 4vw;
-      list-style-type: none;
-      margin-bottom: 3vw;
+      margin-bottom: 1rem;
       color: #737373;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    @keyframes pop {
-  0% {
-    transform: scale(1);
-    color: black;
-  }
-  50% {
-    transform: scale(1.3);
-    color: green;
-  }
-  100% {
-    transform: scale(1);
-    color: black;
-  }
-}
 
-.quantity-animate {
-  animation: pop 0.3s ease;
-}
+    /* Quantity buttons */
+    li button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
 
 
-.navMenu {
-  padding: 2vw;
-  text-align: center;
-  border-bottom: 2px solid #ffbd59;
-  border-top: 2px solid #ffbd59;
-  background-color: #0097b2;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+    .quantity-animate {
+      animation: pop 0.3s ease;
+    }
 
-.navMenu a {
-  color: white;
-  text-decoration: none;
-  font-size: 3.5vw;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: inline-block;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.navMenu a:hover {
-  color: #ffbd59;
-  
-}
-
-.box {
-  background-color: white; 
-  border-radius: 8px; 
-  padding-bottom: 5vw; 
-  margin: 5vw;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-}
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .box img {
+      width: 100%;
+      display: block;
+      margin: 3vw auto 0;
+      padding: 2vw;
+      object-fit: contain;
+    }
+    }
 
   </style>
 </head>
 
 <body class="homeBody" style="background-color: #0097b2;">
 <div class="box">
-  <img src="The yearly consumption list.png" alt="icon" style="width: 100%;  display: block; margin: 0 auto; padding-top: 5vw; padding-bottom: 5vw; ">
+  <img src="The yearly consumption list.png" alt="icon" >
     
   <nav class="navMenu">
     <a href="home.html">Home</a>
-    <a href="#">Karta</a>
+    <a href="map.html">Karta</a>
     <a href="index.html">Logga ut</a>
   </nav>
 
-  <h1 style="text-align: start; padding: 2vw; color: #737373; font-size: 4vw; margin-top: 10vw;">A-Ö</h1>
+  <h1 style="text-align: start; padding: 1.5rem; color: #737373; font-size: 1.5rem; margin-top: 5vw;">A-Ö</h1>
   
   <ul id="departmentListAZ" ></ul>
 </div>
@@ -165,7 +192,7 @@ const departmentsAZ = [
   const controls = document.createElement("div");
   controls.style.display = "flex";
   controls.style.alignItems = "center";
-  controls.style.gap = "4vw";
+  controls.style.gap = "3rem";
 
   const plusBtn = document.createElement("button");
   plusBtn.textContent = "+";

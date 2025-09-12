@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Fancy Picture</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fancy-picture-container {
+      background: rgba(255,255,255,0.8);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(60,60,60,0.2);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .fancy-picture-container img {
+      max-width: 350px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(60,60,60,0.15);
+      border: 6px solid #43c6ac;
+      margin-bottom: 16px;
+      transition: transform 0.3s;
+    }
+    .fancy-picture-container img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    .caption {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.2rem;
+      color: #333;
+      text-align: center;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="fancy-picture-container">
+    <img src="ullaredMap.png" alt="ullaredMap">
+    <div class="caption">Your Fancy Caption Here</div>
+  </div>
+</body>
+</html>
