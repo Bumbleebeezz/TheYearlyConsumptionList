@@ -34,7 +34,7 @@
     /* Navigation */
     .navMenu {
       padding: 0.5rem;
-      margin: 0;
+      margin-top: 3vw;
       text-align: center;
       background-color: #0097b2;
       display: flex;
@@ -49,14 +49,6 @@
       transition: 0.2s;
     }
 
-    h1 {
-      text-align: start;
-      padding: 2vw;
-      color: #737373;
-      font-size: clamp(1.2rem, 3.5vw, 2rem);
-      margin-top: 5vw;
-    }
-
     /* Collapsible sections */
     .collapsible {
       background-color: #0097b2;
@@ -64,6 +56,7 @@
       color: white;
       cursor: pointer;
       padding: 1rem;
+      margin: 0;
       width: 100%;
       border: none;
       text-align: left;
@@ -71,7 +64,7 @@
       transition: 0.3s;
     }
     .content {
-      padding: 0.5rem;
+      padding-left: 2vw;
       display: none;
       overflow: hidden;
     }
@@ -80,8 +73,8 @@
     .btn {
       background-color: transparent;
       color: #0097b2;
-      margin-bottom: 1rem;
-      border-radius: 8px;
+      margin: 0;
+      padding: 0;
       border: none;
       font-size: clamp(0.9rem, 3.5vw, 1.2rem);
       cursor: pointer;
@@ -145,7 +138,6 @@
 </head>
 
 
-<div class="box">
     
   <nav class="navMenu">
     <a href="index.html">Logga ut</a>
@@ -161,11 +153,11 @@
 <script>
   
 const departmentsAZ = [
-    "Gröna rummet", "Hemelektronik", "Hemtextil", "Herrkläder", "Husdjur",
-    "Hälsokost", "Hästsport", "Kosmetik", "Kroppsvård", "Leksaker", "Livsmedel",
-    "Media", "Pyssel & Kontor", "Rengöring", "Skor", "Sport", "Till hemmet",
-    "Utemöbler", "Verktyg & Bilvård", "Väskor"
-  ];
+  "GRÖNA RUMMET", "HEMELEKTRONIK", "HEMTEXTIL", "HERRKLÄDER", "HUSDJUR",
+  "HÄLSOKOST", "HÄSSPORT", "KOSMETIK", "KROPPSVÅRD", "LEKSAKER", "LIVSMEDEL",
+  "MEDIA", "PYSSEL & KONTOR", "RENGÖRING", "SKOR", "SPORT", "TILL HEMMET",
+  "UTEMÖBLER", "VERKTYG & BILVÅRD", "VÄSKOR"
+];
 
   const departmentList = document.getElementById("departmentListAZ");
 
