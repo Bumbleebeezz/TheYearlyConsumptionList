@@ -18,19 +18,12 @@
       box-sizing: border-box;
     }
 
-    body {
-      background-color: #0097b2;
-    }
-
     .box {
       background-color: white;
       border-radius: 12px;
       margin: 4vw auto;
-      max-width: 1000px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
-    
     .box img {
       width: 50%;
       display: block;
@@ -40,17 +33,12 @@
 
     /* Navigation */
     .navMenu {
-      padding: 1rem;
+      padding: 0.5rem;
       margin: 0;
       text-align: center;
-      border-bottom: 2px solid #ffbd59;
-      border-top: 2px solid #ffbd59;
       background-color: #0097b2;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6rem;
+      justify-content: end;
     }
 
     .navMenu a {
@@ -59,10 +47,6 @@
       font-size: clamp(0.9rem, 2.5vw, 1.2rem);
       text-transform: uppercase;
       transition: 0.2s;
-    }
-
-    .navMenu a:hover {
-      color: #ffbd59;
     }
 
     h1 {
@@ -75,34 +59,27 @@
 
     /* Collapsible sections */
     .collapsible {
-      background-color: transparent;
-      color: #737373;
+      background-color: #0097b2;
+      border-radius: 10px;
+      color: white;
       cursor: pointer;
       padding: 1rem;
       width: 100%;
       border: none;
       text-align: left;
       font-size: clamp(1rem, 4vw, 1.5rem);
-      border-bottom: 2px solid #0097b2;
       transition: 0.3s;
     }
-
-    .collapsible:hover,
-    .active {
-      border-bottom: 2px solid #ffbd59;
-    }
-
     .content {
-      padding: 1rem;
+      padding: 0.5rem;
       display: none;
       overflow: hidden;
-      background-color: white;
     }
 
     /* Buttons */
     .btn {
       background-color: transparent;
-      color: #ffbd59;
+      color: #0097b2;
       margin-bottom: 1rem;
       border-radius: 8px;
       border: none;
@@ -113,18 +90,18 @@
     /* List items */
     ul {
       list-style: none;
-      padding: 0.5rem;
+      padding: 1rem;
     }
 
     li {
       font-size: 4vw;
       margin-bottom: 1rem;
-      color: #737373;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
+      
     }
 
     /* Quantity buttons */
@@ -149,12 +126,8 @@
     .fancy-picture-container img {
       width: 95%;
       border-radius: 16px;
-      border: 4px solid #0097b2;
-      margin-bottom: 16px;
+      border: 2px solid #0097b2;
       transition: transform 0.3s;
-    }
-    .fancy-picture-container img:hover {
-      transform: scale(1.05) rotate(-2deg);
     }
 
     /* Responsive adjustments */
@@ -171,24 +144,18 @@
   </style>
 </head>
 
-<body class="homeBody" style="background-color: #0097b2;">
+
 <div class="box">
-  <img src="The yearly consumption list.png" alt="icon" >
     
   <nav class="navMenu">
-    <!-- <a href="home.html">Home</a>
-    <a href="map.html">Karta</a> -->
     <a href="index.html">Logga ut</a>
   </nav>
 
 <div class="fancy-picture-container">
     <img src="ullaredMap.png" alt="ullaredMap">
   </div>
-
-  <h1 style="text-align: start; padding: 1.5rem; color: #737373; font-size: 1.5rem; margin-top: 5vw;">A-Ö</h1>
   
   <ul id="departmentListAZ" ></ul>
-</div>
  
 
 <script>
