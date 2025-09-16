@@ -13,15 +13,9 @@
 <body>
   <div class="login-popup">
     <div class="box">
-      <div class="img-area">
-        <div class="img">
-          <img src="The yearly consumption list - squear.png" alt="Logo">
-        </div>
-      </div>
 
       <div class="form">
         <form onsubmit="checkCredentials(event)">
-          <h1>LOG IN</h1>
 
           <div class="form-group">
             <input id="username" type="text" placeholder="Username" required class="form-control" />
@@ -61,14 +55,15 @@
   </script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
     * {
+      font-family: exo, sans-serif;
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     body {
-      font-family: "Jura", sans-serif;
       line-height: 1.5;
       background-color: #0097b2;
     }
@@ -92,21 +87,6 @@
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
       overflow: hidden;
-    }
-
-    .login-popup .box .img-area {
-      flex: 1 1 50%;
-      padding: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .login-popup .box .img-area .img img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      object-fit: contain;
     }
 
     .login-popup .box .form {
@@ -141,21 +121,24 @@
 
     .btn {
       width: 100%;
-      padding: 0.8rem;
-      color: #0097b2;
-      font-size: 1.2rem;
+      padding: 0.5vw;
+      background-color: #0097b2;
+      font-size: 1.5rem;
       font-weight: bold;
       text-transform: uppercase;
-      border: 2px solid #0097b2;
-      border-radius: 5px;
-      background: transparent;
+      color: #fff;
+      border-radius: 7px;
       cursor: pointer;
-      transition: 0.3s;
+      border: none;
+      border: 2px solid #fff;
+
     }
 
     .btn:hover {
-      background-color: #0097b2;
-      color: #fff;
+      color: #0097b2;
+      border: 2px solid #0097b2;
+      background-color: #fff;
+
     }
 
     /* Mobile responsiveness */
@@ -163,14 +146,6 @@
       .login-popup .box {
         flex-direction: column;
         text-align: center;
-      }
-
-      .login-popup .box .img-area {
-        padding: 1.5rem;
-      }
-
-      .login-popup .box .form {
-        padding: 1.5rem;
       }
 
       .login-popup .box .form h1 {
@@ -182,7 +157,8 @@
       }
 
       .btn {
-        font-size: 1rem;
+        font-size: 1.3rem;
+        padding: 1.8vw;
       }
     }
   </style>

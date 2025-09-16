@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
  * {
-      font-family: 'Jura', sans-serif;
-      font-weight: bold;
+      font-family: exo, sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -64,9 +64,11 @@
       transition: 0.3s;
     }
     .content {
-      padding-left: 2vw;
+      padding-left: 1.5vw;
       display: none;
       overflow: hidden;
+      width: 100%;
+      
     }
 
     /* Buttons */
@@ -84,6 +86,7 @@
     ul {
       list-style: none;
       padding: 1rem;
+      width: 100%;
     }
 
     li {
@@ -94,6 +97,8 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
+      width: 100%;
+
       
     }
 
@@ -153,11 +158,11 @@
 <script>
   
 const departmentsAZ = [
-  "GRÖNA RUMMET", "HEMELEKTRONIK", "HEMTEXTIL", "HERRKLÄDER", "HUSDJUR",
-  "HÄLSOKOST", "HÄSSPORT", "KOSMETIK", "KROPPSVÅRD", "LEKSAKER", "LIVSMEDEL",
-  "MEDIA", "PYSSEL & KONTOR", "RENGÖRING", "SKOR", "SPORT", "TILL HEMMET",
-  "UTEMÖBLER", "VERKTYG & BILVÅRD", "VÄSKOR"
-];
+    "Gröna rummet", "Hemelektronik", "Hemtextil", "Herrkläder", "Husdjur",
+    "Hälsokost", "Hästsport", "Kosmetik", "Kroppsvård", "Leksaker", "Livsmedel",
+    "Media", "Pyssel & Kontor", "Rengöring", "Skor", "Sport", "Till hemmet",
+    "Utemöbler", "Verktyg & Bilvård", "Väskor"
+  ];
 
   const departmentList = document.getElementById("departmentListAZ");
 
@@ -165,15 +170,12 @@ const departmentsAZ = [
   function createListItem(text, key, initialQuantity = 1) {
   const li = document.createElement("li");
   li.textContent = text;
-  li.style.display = "flex";
-  li.style.justifyContent = "space-between";
-  li.style.alignItems = "center";
-  li.style.gap = "4vw";
+
 
   const controls = document.createElement("div");
   controls.style.display = "flex";
-  controls.style.alignItems = "center";
-  controls.style.gap = "3rem";
+  controls.style.justifyContent = "between";
+  controls.style.gap = "1.5rem";
 
   const plusBtn = document.createElement("button");
   plusBtn.textContent = "+";
