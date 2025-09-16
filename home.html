@@ -139,19 +139,30 @@
     }
     }
 
+    .printBtn {
+      display: block;
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      color: #0097b2;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 
 
-    
   <nav class="navMenu">
     <a href="index.html">Logga ut</a>
   </nav>
-
+<button id="printBtn" class="printBtn">🖨️ Skriv ut inköpslista</button>
 <div class="fancy-picture-container">
     <img src="ullaredMap.png" alt="ullaredMap">
   </div>
-  
+
+
+
   <ul id="departmentListAZ" ></ul>
  
 
@@ -332,7 +343,66 @@ document.querySelectorAll(".addBtn").forEach(button => {
     localStorage.setItem(key, JSON.stringify(currentItems));
   });
 });
-  
+  document.getElementById("printBtn").addEventListener("click", () => {
+  // --- 1️⃣ Remember which sections are currently open ---
+  const allSections = document.querySelectorAll("#departmentListAZ > li");
+  const openStates = [];
+
+  allSections.forEach((li, index) => {
+    const content = li.querySelector(".content");
+    const isOpen = content.style.display === "block";
+    openStates[index] = isOpen;
+
+    // Force open for printing
+    content.style.display = "block";
+  });
+
+  // --- 2️⃣ Build printable HTML ---
+  let printContent = "<h1>Inköpslista</h1>";
+
+  allSections.forEach(li => {
+    const deptName = li.querySelector(".collapsible").textContent;
+    const items = li.querySelectorAll("ul li");
+
+    if (items.length > 0) {
+      printContent += `<h2>${deptName}</h2><ul>`;
+      items.forEach(item => {
+        const itemName = item.childNodes[0].textContent.trim();
+        const quantity = item.querySelector("span").textContent;
+        printContent += `<li>${itemName} – ${quantity} st</li>`;
+      });
+      printContent += `</ul>`;
+    }
+  });
+
+  // --- 3️⃣ Restore original open/closed states ---
+  allSections.forEach((li, index) => {
+    const content = li.querySelector(".content");
+    content.style.display = openStates[index] ? "block" : "none";
+  });
+
+  // --- 4️⃣ Open a clean print window ---
+  const printWindow = window.open("", "", "width=800,height=600");
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Inköpslista</title>
+        <style>
+          body { font-family: sans-serif; margin: 2rem; }
+          h1 { text-align: center; margin-bottom: 2rem; }
+          h2 { margin-top: 1.5rem; color: #0097b2; }
+          ul { list-style: none; padding-left: 0; }
+          li { font-size: 1.1rem; margin: 0.3rem 0; }
+        </style>
+      </head>
+      <body>
+        ${printContent}
+         </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.print();
+});
 </script>
 </body>
 </html>
