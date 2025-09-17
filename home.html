@@ -127,6 +127,16 @@
       border: 2px solid #0097b2;
       transition: transform 0.3s;
     }
+    .printBtn {
+      display: block;
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      color: #0097b2;
+      border: none;
+      font-size: 2.5vw;
+      cursor: pointer;
+    }
 
     /* Responsive adjustments */
     @media (max-width: 600px) {
@@ -137,17 +147,6 @@
       padding: 2vw;
       object-fit: contain;
     }
-    }
-
-    .printBtn {
-      display: block;
-      margin: 1rem;
-      padding: 0.5rem 1rem;
-      background: transparent;
-      color: #0097b2;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
     }
   </style>
 </head>
@@ -181,7 +180,8 @@ const departmentsAZ = [
   function createListItem(text, key, initialQuantity = 1) {
   const li = document.createElement("li");
   li.textContent = text;
-
+  li.style.fontSize = "4vw";
+  li.style.fontWeight = "300";
 
   const controls = document.createElement("div");
   controls.style.display = "flex";
@@ -191,7 +191,7 @@ const departmentsAZ = [
   const plusBtn = document.createElement("button");
   plusBtn.textContent = "+";
   plusBtn.style.color = "green";
-  plusBtn.style.fontSize = "4vw";
+  plusBtn.style.fontSize = "5vw";
   plusBtn.style.cursor = "pointer";
   plusBtn.style.border = "none";
   plusBtn.style.background = "none";
@@ -203,7 +203,7 @@ const departmentsAZ = [
   const minusBtn = document.createElement("button");
   minusBtn.textContent = "-";
   minusBtn.style.color = "red";
-  minusBtn.style.fontSize = "4vw";
+  minusBtn.style.fontSize = "5vw";
   minusBtn.style.cursor = "pointer";
   minusBtn.style.border = "none";
   minusBtn.style.background = "none";
