@@ -369,7 +369,7 @@ document.querySelectorAll(".addBtn").forEach(button => {
       items.forEach(item => {
         const itemName = item.childNodes[0].textContent.trim();
         const quantity = item.querySelector("span").textContent;
-        printContent += `<li>${itemName} – ${quantity} st</li>`;
+        printContent += `<li>${itemName} ..... ${quantity} st</li>`;
       });
       printContent += `</ul>`;
     }
@@ -388,16 +388,19 @@ document.querySelectorAll(".addBtn").forEach(button => {
       <head>
         <title>Inköpslista</title>
         <style>
-          body { font-family: sans-serif; margin: 2rem; }
+          * { font-family: exo, sans-serif; }
+          title { font-family: exo, sans-serif; }
+          body {  margin: 2rem; }
           h1 { text-align: center; margin-bottom: 2rem; }
-          h2 { margin-top: 1.5rem; color: #0097b2; }
-          ul { list-style: none; padding-left: 0; }
+          h2 {margin-top: 1.5rem; color: #0097b2; }
+          ul { list-style-type: none; padding-left: 0; }
           li { font-size: 1.1rem; margin: 0.3rem 0; }
         </style>
       </head>
       <body>
         ${printContent}
          </body>
+
     </html>
   `);
   printWindow.document.close();
