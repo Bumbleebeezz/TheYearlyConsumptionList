@@ -358,7 +358,7 @@ document.querySelectorAll(".addBtn").forEach(button => {
   });
 
   // --- 2️⃣ Build printable HTML ---
-  let printContent = "<h1>Inköpslista</h1>";
+  let printContent = "";
 
   allSections.forEach(li => {
     const deptName = li.querySelector(".collapsible").textContent;
@@ -386,7 +386,6 @@ document.querySelectorAll(".addBtn").forEach(button => {
   printWindow.document.write(`
     <html>
       <head>
-        <title>Inköpslista</title>
         <style>
           * { font-family: exo, sans-serif; }
           title { font-family: exo, sans-serif; }
