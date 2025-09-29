@@ -90,12 +90,11 @@
     }
 
     li {
-      font-size: 4vw;
       margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
       flex-wrap: wrap;
       width: 100%;
 
@@ -180,30 +179,30 @@ const departmentsAZ = [
   function createListItem(text, key, initialQuantity = 1) {
   const li = document.createElement("li");
   li.textContent = text;
-  li.style.fontSize = "4vw";
+  li.style.fontSize = "3vw";
   li.style.fontWeight = "300";
 
   const controls = document.createElement("div");
   controls.style.display = "flex";
   controls.style.justifyContent = "between";
-  controls.style.gap = "1.5rem";
+  controls.style.gap = "3rem";
 
   const plusBtn = document.createElement("button");
   plusBtn.textContent = "+";
   plusBtn.style.color = "green";
-  plusBtn.style.fontSize = "5vw";
+  plusBtn.style.fontSize = "3vw";
   plusBtn.style.cursor = "pointer";
   plusBtn.style.border = "none";
   plusBtn.style.background = "none";
 
   const currentQuantity = document.createElement("span");
   currentQuantity.textContent = initialQuantity;
-  currentQuantity.style.fontSize = "4vw";
+  currentQuantity.style.fontSize = "3vw";
 
   const minusBtn = document.createElement("button");
   minusBtn.textContent = "-";
   minusBtn.style.color = "red";
-  minusBtn.style.fontSize = "5vw";
+  minusBtn.style.fontSize = "3vw";
   minusBtn.style.cursor = "pointer";
   minusBtn.style.border = "none";
   minusBtn.style.background = "none";
@@ -211,7 +210,7 @@ const departmentsAZ = [
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "X";
   removeBtn.style.color = "red";
-  removeBtn.style.fontSize = "4vw";
+  removeBtn.style.fontSize = "3vw";
   removeBtn.style.cursor = "pointer";
   removeBtn.style.border = "none";
   removeBtn.style.background = "none";
