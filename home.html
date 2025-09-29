@@ -183,6 +183,7 @@ const departmentsAZ = [
   function createListItem(text, key, initialQuantity = 1) {
   const li = document.createElement("li");
   li.textContent = text;
+  li.style.fontSize = "3vw";
   li.style.fontWeight = "300";
 
   const controls = document.createElement("div");
@@ -193,16 +194,19 @@ const departmentsAZ = [
   const plusBtn = document.createElement("button");
   plusBtn.textContent = "+";
   plusBtn.style.color = "green";
+  plusBtn.style.fontSize = "3vw";
   plusBtn.style.cursor = "pointer";
   plusBtn.style.border = "none";
   plusBtn.style.background = "none";
 
   const currentQuantity = document.createElement("span");
   currentQuantity.textContent = initialQuantity;
+  currentQuantity.style.fontSize = "3vw";
 
   const minusBtn = document.createElement("button");
   minusBtn.textContent = "-";
   minusBtn.style.color = "red";
+  minusBtn.style.fontSize = "3vw";
   minusBtn.style.cursor = "pointer";
   minusBtn.style.border = "none";
   minusBtn.style.background = "none";
@@ -210,6 +214,7 @@ const departmentsAZ = [
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "X";
   removeBtn.style.color = "red";
+  removeBtn.style.fontSize = "3vw";
   removeBtn.style.cursor = "pointer";
   removeBtn.style.border = "none";
   removeBtn.style.background = "none";
